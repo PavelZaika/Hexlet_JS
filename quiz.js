@@ -33,4 +33,4 @@ const sequenceSum = (begin, end) => {
 
 };
 
-console.log (sequenceSum(2, 6));
+console.log (sequenceSum(1, 50));
