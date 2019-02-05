@@ -15,7 +15,9 @@ const smallestDivisor = (num) => {
     return iter(1, num);
 
 };
-console.log (smallestDivisor(16));
+console.log (smallestDivisor(71));
+
+
 
 const sequenceSum = (begin, end) => {
 
@@ -33,4 +35,34 @@ const sequenceSum = (begin, end) => {
 
 };
 
-console.log (sequenceSum(1, 50));
+console.log (sequenceSum(1, 5));
+
+
+const smallestDivisor2 = (num) => {
+
+    let counter = 1;
+    let result = 1;
+    if (num <= 0) {
+        return NaN;
+    }
+
+    else if (num == 1) {
+        return counter;
+    }
+    
+    while (counter <= num) {
+        result = num / counter;
+        counter++;
+        if (num % counter === 0 && counter > 1) {
+            return counter;
+        }
+
+    }
+
+    return counter;
+
+
+
+};
+
+console.log(smallestDivisor2(121));
