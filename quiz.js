@@ -15,8 +15,10 @@ const smallestDivisor = (num) => {
     return iter(1, num);
 
 };
-console.log (smallestDivisor(71));
+console.log(smallestDivisor(71));
 
+
+//_____________________________________________________________________________________________________________________
 
 
 const sequenceSum = (begin, end) => {
@@ -35,7 +37,9 @@ const sequenceSum = (begin, end) => {
 
 };
 
-console.log (sequenceSum(1, 5));
+console.log(sequenceSum(1, 5));
+
+//_____________________________________________________________________________________________________________________
 
 
 const smallestDivisor2 = (num) => {
@@ -49,7 +53,7 @@ const smallestDivisor2 = (num) => {
     else if (num == 1) {
         return counter;
     }
-    
+
     while (counter <= num) {
         result = num / counter;
         counter++;
@@ -66,3 +70,57 @@ const smallestDivisor2 = (num) => {
 };
 
 console.log(smallestDivisor2(121));
+
+
+//_____________________________________________________________________________________________________________________
+
+const reverseReverse = (str) => {
+
+    return str.split("").reverse().join("");
+
+};
+
+console.log(reverseReverse('California'));
+
+
+//_____________________________________________________________________________________________________________________
+
+const reverseWhilePush = (str) => {
+
+    let reverseStr = [];
+    let count = (str.length - 1);
+
+    while (count >= 0) {
+        reverseStr.push(str[count]);
+        count--;
+
+
+    }
+
+    return reverseStr.join('');
+
+};
+
+console.log(reverseWhilePush('California'));
+
+
+//_____________________________________________________________________________________________________________________
+
+const reverseOld = (str) => {
+
+    let reverseStr = ''
+    let count = (str.length - 1);
+
+    while (count >= 0) {
+        reverseStr = reverseStr + str[count];
+        count--;
+
+    }
+
+    return reverseStr;
+
+};
+
+console.log(reverseOld('California'));
+
+//_____________________________________________________________________________________________________________________
