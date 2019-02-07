@@ -151,7 +151,7 @@ const sumOfSquares = (a, b) => {
 };
 const squareSumOfSquares = (c, d) => {
 
-      return square(sumOfSquares(c, d));
+    return square(sumOfSquares(c, d));
 }
 
 console.log(square(2));
@@ -161,3 +161,50 @@ console.log(squareSumOfSquares(6, 2));
 //_____________________________________________________________________________________________________________________
 
 
+
+const bigLettersCount = (str) => {
+    
+    const arrLetters = str.split('');
+    let counter = 0;
+
+    for (let i = 0; i < arrLetters.length; i++) {
+        if (arrLetters[i] === arrLetters[i].toUpperCase()) {
+            counter++;
+        }
+
+    }
+    return counter;
+    
+};
+
+
+const compare = (first, second) => {
+    const firstCount = bigLettersCount(first);
+    const secondCount = bigLettersCount(second);
+
+    
+    if (firstCount > secondCount) {
+        return 1;
+    }
+    else if (firstCount === secondCount) {
+        return 0;
+    }
+    else return -1;
+    
+};
+
+const greaterThan = (first, second) =>
+    compare(first, second) === 1;
+
+const lessThan = (first, second) =>
+    compare(first, second) === -1;
+
+const isEqual = (first, second) =>
+    compare(first, second) === 0;
+
+console.log(greaterThan('ASDdsdfsfe', 'ASDasdwEQAF'));
+console.log(lessThan('ASDdsDFDFdfsfe', 'ASDasDFdwEQAF'));
+console.log(isEqual('ASDdfghHHHHsdfsfe', 'ASDasdwEFDFDQAF'));
+
+
+//_____________________________________________________________________________________________________________________
