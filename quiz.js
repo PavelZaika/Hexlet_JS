@@ -126,18 +126,35 @@ console.log(reverseOld('California'));
 //_____________________________________________________________________________________________________________________
 
 const isPrime = (n) => {
-  
-    let res = 0;
-    
-       for (let counter = 1; counter <= n; counter++) {
-        let test = n%counter;
-        if (test === 0){
-        res++;
-        }
-      }
-        
-      return (res === 2);
-    };
-    console.log (isPrime(2017));
 
-    //_____________________________________________________________________________________________________________________
+    let res = 0;
+
+    for (let counter = 1; counter <= n; counter++) {
+        let test = n % counter;
+        if (test === 0) {
+            res++;
+        }
+    }
+
+    return (res === 2);
+};
+console.log(isPrime(2017));
+
+//_____________________________________________________________________________________________________________________
+
+const square = (n) => {
+    return n ** 2;
+};
+const sumOfSquares = (a, b) => {
+    return square(a) + square(b);
+};
+const squareSumOfSquares = (c, d) => {
+
+      return square(sumOfSquares(c, d));
+}
+
+console.log(square(2));
+console.log(sumOfSquares(4, 5));
+console.log(squareSumOfSquares(6, 2));
+
+//_____________________________________________________________________________________________________________________
