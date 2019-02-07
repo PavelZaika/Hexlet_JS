@@ -203,8 +203,8 @@ const isEqual = (first, second) =>
     compare(first, second) === 0;
 
 console.log(greaterThan('ASDdsdfsfe', 'ASDasdwEQAF'));
-console.log(lessThan('ASDdsDFDFdfsfe', 'ASDasDFdwEQAF'));
-console.log(isEqual('ASDdfghHHHHsdfsfe', 'ASDasdwEFDFDQAF'));
+console.log(lessThan('ASDdsDFDFdfsfe', 'dfghsdfsfe'));
+console.log(isEqual('dfghsdfsfe', 'dfghsdfssAdfdffe'));
 
 
 //_____________________________________________________________________________________________________________________
