@@ -163,7 +163,7 @@ console.log(squareSumOfSquares(6, 2));
 
 
 const bigLettersCount = (str) => {
-    
+
     const arrLetters = str.split('');
     let counter = 0;
 
@@ -174,7 +174,7 @@ const bigLettersCount = (str) => {
 
     }
     return counter;
-    
+
 };
 
 
@@ -182,7 +182,7 @@ const compare = (first, second) => {
     const firstCount = bigLettersCount(first);
     const secondCount = bigLettersCount(second);
 
-    
+
     if (firstCount > secondCount) {
         return 1;
     }
@@ -190,7 +190,7 @@ const compare = (first, second) => {
         return 0;
     }
     else return -1;
-    
+
 };
 
 const greaterThan = (first, second) =>
@@ -208,3 +208,91 @@ console.log(isEqual('dfghsdfsfe', 'dfghsdfssAdfdffe'));
 
 
 //_____________________________________________________________________________________________________________________
+
+
+const addDigits = (num) => {
+
+    let res = num;
+
+    if (num <= 0) {
+        return 0;
+    }
+    while (res >= 10) {
+        res = sumDig(res);
+    }
+    return res;
+};
+
+
+
+const sumDig = (num) => {
+
+    let arrNum = num.toString().split('');
+    let res = 0;
+    for (let i = 0; i < arrNum.length; i++) {
+        res = res + Number(arrNum[i]);
+    }
+    return res;
+
+};
+
+console.log(addDigits(88));
+
+//_____________________________________________________________________________________________________________________
+
+const sum = (str) => {
+    let result = 0;
+    for (let i = 0; i < str.length; i += 1) {
+        result += Number(str[i]);
+    }
+
+    return result;
+};
+
+const addDigitsTeacher = (num) => {
+    let result = num;
+    while (result >= 10) {
+        result = sum(String(result));
+    }
+
+    return result;
+};
+
+console.log(addDigitsTeacher(66));
+//_____________________________________________________________________________________________________________________
+
+const toUppC = (str) => {
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        if ((str[i] === ' ' && str[i + 1] !== ' ')) {
+            newStr = newStr + ' ' + str[i + 1].toUpperCase();
+            i++;
+        }
+
+        else if (i === 0) {
+            str[i].toUpperCase;
+            newStr = newStr + str[i].toUpperCase();
+        }
+        
+        else {
+            newStr = newStr + str[i];
+        }
+    }
+    return newStr;
+};
+console.log(toUppC('  hello,   world!'));
+//_____________________________________________________________________________________________________________________
+
+let toUppCTeacher = (str) => {
+    let result = '';
+    for (let i = 0; i < str.length; i += 1) {
+      const shouldBeBig = str[i] !== ' ' && (i === 0 || str[i - 1] === ' ');
+      result += shouldBeBig ? str[i].toUpperCase() : str[i];
+    }
+  
+    return result;
+  };
+
+  console.log(toUppCTeacher('  hello,   world!'))
+  //_____________________________________________________________________________________________________________________
+
