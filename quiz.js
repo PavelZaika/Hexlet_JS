@@ -292,6 +292,5 @@ let toUppCTeacher = (str) => {
   
     return result;
   };
-
-  console.log(toUppCTeacher('  hello,   world!'))
+  console.log(toUppCTeacher('  hello,   world!'));
   //_____________________________________________________________________________________________________________________
