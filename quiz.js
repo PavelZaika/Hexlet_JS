@@ -273,7 +273,7 @@ const toUppC = (str) => {
             str[i].toUpperCase;
             newStr = newStr + str[i].toUpperCase();
         }
-        
+
         else {
             newStr = newStr + str[i];
         }
@@ -295,4 +295,3 @@ let toUppCTeacher = (str) => {
 
   console.log(toUppCTeacher('  hello,   world!'))
   //_____________________________________________________________________________________________________________________
-
