@@ -24,8 +24,6 @@ const formattedTime = (num) => {
     return `${chkFnk(hrsCnt)}:${chkFnk(num)} `;
 };
 
-
-
 const chkFnk = (someNum) => {
     if (someNum < 10) {
         return ("0" + String(someNum));
@@ -34,6 +32,5 @@ const chkFnk = (someNum) => {
     else return someNum;
 
 };
-
 
 console.log(formattedTime(175));
