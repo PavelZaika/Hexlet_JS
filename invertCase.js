@@ -14,7 +14,5 @@ let newStr = '';
     return newStr;
  };
 
- 
-
  console.log(invertCase('Hello, World!'));
  console.log(invertCase('TTeeSstT'));
