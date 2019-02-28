@@ -13,27 +13,26 @@ formattedTime(754); // 12:34
 
 
 const formattedTime = (num) => {
-let hrsCnt = 0;
+    let hrsCnt = 0;
 
-while (num >= 60) {
-    num -= 60;
-    hrsCnt++; 
-}
+    while (num >= 60) {
+        num -= 60;
+        hrsCnt++;
+    }
 
-
-return `${chkFnk(hrsCnt)}:${chkFnk(num)} `;
+    return `${chkFnk(hrsCnt)}:${chkFnk(num)} `;
 };
 
 
 
 const chkFnk = (someNum) => {
     if (someNum < 10) {
-   return ("0"+String(someNum));
-} 
+        return ("0" + String(someNum));
+    }
 
-else return someNum;
+    else return someNum;
 
 };
 
 
-console.log(formattedTime(754));
+console.log(formattedTime(55));
