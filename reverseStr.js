@@ -15,7 +15,7 @@ const reverseStr = (str) => {
     if (str === "") {
         return "";
     } else {
-        return str.substr(str.length - 1, 1) + reverseStr(str.substr(0, str.length -1 ));;
+       return str.substr(str.length - 1, 1) + reverseStr(str.substr(0, str.length -1 ));
     }
     
 };
