@@ -11,7 +11,9 @@ const isPerfect = (num) => {
     for (let i = num - 1; i > 0; i--) {
 
         if (num % i === 0) {
+           
             n += i;
+           
         }
 
     }
@@ -26,4 +28,4 @@ const isPerfect = (num) => {
 
 };
 
-console.log(isPerfect(8126));
+console.log(isPerfect(6));
