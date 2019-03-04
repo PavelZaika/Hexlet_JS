@@ -114,4 +114,4 @@ const factorial = (n) => {
 console.log(withoutTwoZeros(2, 2));
 console.log(withoutTwoZeros(1, 1));
 console.log(withoutTwoZeros(1, 3));
-console.log(withoutTwoZeros(10, 12));
+console.log(withoutTwoZeros(3, 5));

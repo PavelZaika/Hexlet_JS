@@ -9,13 +9,30 @@ diff(120, 280) === 160;
 */
 
 
-const diff = (a, b) => (a === 0 && b > 180) ? 360 - b : b - a;
+/** teacher
+  const diff = (a, b) => {
+  const angle = Math.abs(a - b);
+  return Math.min(angle, 360 - angle);
+}; 
 
+*/
 
+const diff = (a, b) => {
+    let res = a - b;
+    
+    if (res <= 0){
+      return (res - (res * 2) <= 180) ? (res - (res * 2)) : 360 - (res - (res * 2)) ;
+    
+    }
+    
+    else if (res >= 180){
+      return 360 - res;
+    }
+    
+    else return res;
+    
+    
+    
+    };
 
-console.log(diff(0, 45));
-console.log(diff(0, 180));
-console.log(diff(0, 190));
-console.log(diff(120, 280));
-console.log(diff(0 , 170));
-
+console.log(diff(0, 90));

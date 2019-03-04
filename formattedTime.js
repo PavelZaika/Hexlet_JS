@@ -21,7 +21,7 @@ const formattedTime = (num) => {
         hrsCnt++;
     }
 
-    return `${chkFnk(hrsCnt)}:${chkFnk(num)} `;
+    return `${chkFnk(hrsCnt)}:${chkFnk(num)}`;
 };
 
 const chkFnk = (someNum) => {
