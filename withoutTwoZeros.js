@@ -85,8 +85,7 @@ const withoutTwoZeros = (x, z) => {
     
         
     let cntOfVar = factorial(x + z) / (factorial(2) * factorial(x + z - 2));
-    console.log(`how many diff. numbers ${cntOfVar}`);
-
+    
     if (x === 1){
         return x + z;
         
@@ -111,7 +110,10 @@ const factorial = (n) => {
 
 };
 
-console.log(withoutTwoZeros(2, 2));
+console.log(withoutTwoZeros(3, 1));
+console.log(withoutTwoZeros(3, 2));
 console.log(withoutTwoZeros(1, 1));
-console.log(withoutTwoZeros(1, 3));
 console.log(withoutTwoZeros(3, 5));
+console.log(withoutTwoZeros(1, 3));
+console.log(withoutTwoZeros(2, 2));
+console.log(withoutTwoZeros(2, 4));
