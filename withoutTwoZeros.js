@@ -79,39 +79,25 @@ console.log(withoutTwoZeros(1, 1));
 console.log(withoutTwoZeros(1, 3));
 console.log(withoutTwoZeros(2, 4)); */
 
+/*  это решение подсмотрено (взят за основу алгоритм из форума) 
+const withoutTwoZeros = (x , z) => {
 
-const withoutTwoZeros = (x, z) => {
-
-    
-        
-    let cntOfVar = factorial(x + z) / (factorial(2) * factorial(x + z - 2));
-    
-    if (x === 1){
-        return x + z;
-        
+    if (x > z + 1){
+      return 0;
     }
-    else if (x === 0){
-        return 1;            
+    else if (z === 0 || x === 0 ) {
+      return 1;
     }
-
     else {
-        return cntOfVar - (x+z-1);
+      return withoutTwoZeros(x,z-1) + withoutTwoZeros(x-1,z-1);
     }
-};
-
-const factorial = (n) => {
-
-    let fact = 1;
-    for (let i = 1; i <= n; i++) {
-        fact *= i;
-    }
-
-    return fact;
-
-};
+    
+    };
+    */
+   
 
 console.log(withoutTwoZeros(3, 1));
-console.log(withoutTwoZeros(3, 2));
+console.log(withoutTwoZeros(1, 0));
 console.log(withoutTwoZeros(1, 1));
 console.log(withoutTwoZeros(3, 5));
 console.log(withoutTwoZeros(1, 3));
