@@ -52,3 +52,5 @@ return (left.length === right.length);
 }
 
  };
+
+ console.log(areBracketsBalanced('()()()()()()()('));
