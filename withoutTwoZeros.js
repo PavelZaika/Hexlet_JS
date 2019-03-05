@@ -9,38 +9,49 @@
 
 
 
-const withoutTwoZeros = (x , z) => {
+const withoutTwoZeros = (x, z) => {
 
-if (x > z + 1){
-  return 0;
-}
-else if (z === 0 || x === 0 ) {
-  return 1;
-}
-else {
-  let arr = [];
+    if (x > z + 1) {
+        return 0;
+    }
+    else if (z === 0 || x === 0) {
+        return 1;
+    }
+    else {
+        let arr = [];
         arr = addToArr(0, x).concat(addToArr(1, z));
-        let newArr = printPermutations(arr, x+z);
-     let str = newArr.join(" ")
-     var newString = str.replace(/,/g, ""); 
-     newArr=newString.split(' ')
-    
-     newArr.sort(compareNumeric);
-     
-     for (let i = 0; i < newArr.length; i++) {
-        if (~newArr[i].indexOf('00')) {
-            delete newArr[i];
+        let newArr = printPermutations(arr, x + z);
+        let str = newArr.join(" ").replace(/,/g, "");
+        newArr = str.split(' ');
+
+
+
+        newArr = clear_00(newArr);
+        newArr.sort(compareNumeric);
+        newArr = newArr.filter(element => element !== null);
+
+        newArr = delTheSame(newArr);
+        newArr = newArr.filter(element => element !== null);
+        return newArr.length;
+    }
+
+};
+
+const delTheSame = (arr) => {
+    for (let i = 0; i < arr.length; i++)
+        if (arr[i] === arr[i + 1]) {
+            delete arr[i];
+        }
+    return arr;
+};
+
+const clear_00 = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (~arr[i].indexOf('00')) {
+            delete arr[i];
         }
     }
-    newArr = newArr.filter(element => element !== null);
-       for (let i = 0; i < newArr.length; i++)
-        if (newArr[i] === newArr[i + 1]) {
-            delete newArr[i];
-        }
-        newArr = newArr.filter(element => element !== null);
-    return newArr.length;
-}
-
+    return arr;
 };
 
 const addToArr = (x, n) => {
@@ -59,40 +70,41 @@ const compareNumeric = (a, b) => {
 
 
 const printPermutations = (array, k) => {
-  let combinations = [];
-  let indices = [];
-  const next = (index) => {
-    if (index == k) {
-      let result = [];
-      for (let i = 0; i < k; i++) {
-        result[i] = array[indices[i]];
-      }
-      combinations.push(result);
-      return;
-    }
-    for (let i = 0; i < array.length; i++) {
-      if (alreadyInCombination(i, index))
-        continue;
-      indices[index] = i;
-      next(index + 1);
-    }
-  }
-  const alreadyInCombination = (i, index) => {
-      for (let j = 0; j < index; j++) {
-        if (indices[j] == i) {
-          return true;
+    let combinations = [];
+    let indices = [];
+    const next = (index) => {
+        if (index == k) {
+            let result = [];
+            for (let i = 0; i < k; i++) {
+                result[i] = array[indices[i]];
+            }
+            combinations.push(result);
+            return;
         }
-      }
-      return false;
-  }
-  next(0);
-  return combinations;
+        for (let i = 0; i < array.length; i++) {
+            if (alreadyInCombination(i, index))
+                continue;
+            indices[index] = i;
+            next(index + 1);
+        }
+    }
+    const alreadyInCombination = (i, index) => {
+        for (let j = 0; j < index; j++) {
+            if (indices[j] == i) {
+                return true;
+            }
+        }
+        return false;
+    }
+    next(0);
+    return combinations;
 };
+
 
 console.log(withoutTwoZeros(2, 2));
 console.log(withoutTwoZeros(1, 1));
 console.log(withoutTwoZeros(1, 3));
-console.log(withoutTwoZeros(2, 4)); 
+console.log(withoutTwoZeros(2, 4));
 
 /*  это решение подсмотрено (взят за основу алгоритм из форума) 
 const withoutTwoZeros = (x , z) => {
@@ -109,7 +121,7 @@ const withoutTwoZeros = (x , z) => {
     
     };
     */
-   
+
 
 console.log(withoutTwoZeros(3, 1));
 console.log(withoutTwoZeros(1, 0));
