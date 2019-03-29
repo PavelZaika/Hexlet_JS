@@ -38,9 +38,7 @@ const uniq = (arr) => {
 
 
 const uniqSet = (arr) => {
-
     return [...new Set([...arr])];
-
 };
 
 const uniqTeach = (coll) => coll.reduce(
