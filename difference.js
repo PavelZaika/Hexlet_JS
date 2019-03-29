@@ -13,10 +13,10 @@ difference(new Set([2, 1]), new Set([2, 3]));
 
 
 const difference = (set1, set2) => {
-    const mySet = new Set();
-   const filtered = [...set1].filter(element => (!set2.has(element))?mySet.add(element):0);
+   
+   const filtered = new Set([...set1].filter(element => (!set2.has(element))));
   
-  return mySet;
+  return filtered;
   };
 
 
