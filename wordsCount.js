@@ -38,15 +38,12 @@ const wordsCount = (wordsList, stopList) => {
 
     const filtered = newLowCaseArr(wordsList).filter(word => (!stopList.includes(word)));
 
-
-
     const map = filtered.reduce((acc, word) => {
         if (!acc.has(word)) {
             return acc.set(word, 1);
         }
         return acc.set(word, acc.get(word) + 1);
     }, new Map());
-
 
     return map;
 
